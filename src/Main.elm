@@ -58,11 +58,13 @@ todoList todos =
     ul [] children
 
 view model =
-  div []
+  div [
+    style[("background-color","#CCC")]
+    ]
     [ input [ type_ "text"
             , onInput UpdateText
             , value model.todo
-            ] []
+    ] []
     , button [ onClick AddItem ] [ text "Add Todo" ]
     , div [] [ text model.todo ]
     , todoList model.todos
