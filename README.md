@@ -1,2 +1,2 @@
 # elm-todo
-todo app in elm
+This will be a simple todo app in elm.
