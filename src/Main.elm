@@ -45,9 +45,9 @@ update msg model =
 --view
 
 todoItem todo =
-  li []
+  li [style[("list-style-type", "none")]]
     [ text todo
-    , button [ onClick (RemoveItem todo) ] [ text "x" ]
+    , button [ onClick (RemoveItem todo), style[("margin-left","15px"), ("border-radius","3px"), ("font-size","8px")]] [ text "X" ]  
     ]
 
 
@@ -55,15 +55,20 @@ todoList todos =
   let
     children = List.map todoItem todos
   in
-    ul [] children
+    ul [style[("margin","10px")]] children
 
 view model =
-  div []
+  div [ style [
+        ("padding","30px 0 10px 20px"), ("margin", "15px"), ("max-width","250px"), 
+        ("background-color","#86caca"), ("border-radius","2px") ]
+      ]
     [ input [ type_ "text"
             , onInput UpdateText
             , value model.todo
+            , style[("margin-right", "10px"), ("border-radius","2px")]
             ] []
-    , button [ onClick AddItem ] [ text "Add Todo" ]
-    , div [] [ text model.todo ]
+    , button [ onClick AddItem, style[("border-radius","2px")] ] [ text "Add Todo" ]
+    -- , div [] [ text model.todo ]
     , todoList model.todos
     ]
+ 
