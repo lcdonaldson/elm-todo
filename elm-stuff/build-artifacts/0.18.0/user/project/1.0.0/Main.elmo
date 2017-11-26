@@ -72,7 +72,11 @@ var _user$project$Main$todoItem = function (todo) {
 										_1: {
 											ctor: '::',
 											_0: {ctor: '_Tuple2', _0: 'font-size', _1: '8px'},
-											_1: {ctor: '[]'}
+											_1: {
+												ctor: '::',
+												_0: {ctor: '_Tuple2', _0: 'text-transform', _1: 'capitalize'},
+												_1: {ctor: '[]'}
+											}
 										}
 									}
 								}),
@@ -159,7 +163,11 @@ var _user$project$Main$view = function (model) {
 										_1: {
 											ctor: '::',
 											_0: {ctor: '_Tuple2', _0: 'border-radius', _1: '2px'},
-											_1: {ctor: '[]'}
+											_1: {
+												ctor: '::',
+												_0: {ctor: '_Tuple2', _0: 'text-transform', _1: 'capitalize'},
+												_1: {ctor: '[]'}
+											}
 										}
 									}),
 								_1: {ctor: '[]'}
@@ -193,8 +201,28 @@ var _user$project$Main$view = function (model) {
 					}),
 				_1: {
 					ctor: '::',
-					_0: _user$project$Main$todoList(model.todos),
-					_1: {ctor: '[]'}
+					_0: A2(
+						_elm_lang$html$Html$div,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$style(
+								{
+									ctor: '::',
+									_0: {ctor: '_Tuple2', _0: 'visibility', _1: 'hidden'},
+									_1: {ctor: '[]'}
+								}),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text(model.todo),
+							_1: {ctor: '[]'}
+						}),
+					_1: {
+						ctor: '::',
+						_0: _user$project$Main$todoList(model.todos),
+						_1: {ctor: '[]'}
+					}
 				}
 			}
 		});
